@@ -1,8 +1,9 @@
 import React from "react";
+import MarkdownPreview from "@uiw/react-markdown-preview";
 import "./Preview.css";
 
-const Preview = () => {
-  return <iframe className="preview" src="https://jsfiddle.net/about" />;
+const Preview = ({ url }) => {
+  return <MarkdownPreview source={url} />;
 };
 
 export default Preview;

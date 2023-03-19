@@ -4,6 +4,10 @@ import "./Input.css";
 
 const data = [
   {
+    category: "",
+    rows: [{ label: "mission_profile", data: ["ram_mission_nominal"] }],
+  },
+  {
     category: "CONFIGURATION",
     rows: [
       { label: "aspect_ratio_wing", data: [9.7] },
@@ -107,13 +111,12 @@ const data = [
   },
 ];
 
-const Input = () => {
+const Input = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -129,7 +132,11 @@ const Input = () => {
                     {row.data.map((value, index) => (
                       <input
                         defaultValue={value}
-                        {...register(row.label + index)}
+                        {...register(
+                          row.data.length > 1
+                            ? row.label + (index + 1)
+                            : row.label
+                        )}
                         key={value + index}
                       />
                     ))}
