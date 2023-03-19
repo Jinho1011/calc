@@ -1,0 +1,22 @@
+form {
+  width: 300px;
+  padding: 20px;
+}
+
+.rows-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submit {
+  margin-top: 20px;
+}
