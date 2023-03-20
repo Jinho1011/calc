@@ -35,5 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://117.16.137.239:3000"
 }
